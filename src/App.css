@@ -27,3 +27,10 @@ Link, a , link {
 .all-text{
   padding: 0px 10px;
 }
+
+.h7{
+  font-size: 25px;
+  padding: 0px 50px;
+  font-weight: 700;
+  font-family: darwin;
+}

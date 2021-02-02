@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Slide from '@material-ui/core/Slide';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles,withStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -20,10 +20,12 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import MenuIcon from '@material-ui/icons/Menu';
 import { theme as color } from '../Theme/Theme';
 import { InfoRounded, } from '@material-ui/icons';
-import logo from "../Images/logo-2.png"
+import "../CSS/Components/MyAppBar.css";
 import { Link } from 'react-router-dom';
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import HelpOutlineRoundedIcon from '@material-ui/icons/HelpOutlineRounded';
+import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
+import TextField from '@material-ui/core/TextField';
 
 const drawerWidth = 200;
 
@@ -137,16 +139,49 @@ export default function MyAppBar(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap className="wrap" style={{ fontFamily: "mosaic" }} >
-                        <img alt="logo" src={logo} width="50px" />
+                    <Typography variant="h6" noWrap style={{ display: "flex", justifyContent: "space-between", width: "100%" }} >
+                        <div style={{ display: "flex" }} >
+                            <div style={{ fontFamily: "mosaic", margin: "0px 20px" }} className="wrap" >
+                                MOSAIC
+                            </div>
+                            <div className="wrap" style={{ margin: "0px 20px", fontSize: "16px" }} >
+                                <div className="menu" >
+                                    Apps
+                                </div>
+                                <div className="menu">
+                                    Hollywood
+                                </div>
+                                <div className="menu">
+                                    Bollywood
+                                </div>
+                                <div className="menu">
+                                    TV
+                                </div>
+                                <div className="menu">
+                                    Movies
+                                </div>
+                                <div className="menu">
+                                    Sports
+                                </div>
+                                <div className="menu">
+                                    News
+                                </div>
+                                <div className="menu">
+                                    Anime
+                                </div>
+                            </div>
+                        </div>
+                        <div style={{ marginRight: "5vw" }}>
+                            <input className="searchinput" placeholder="Search" />
+                        </div>
                     </Typography>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
-                        onClick={handleDrawerOpen}
                         edge="start"
                         className={clsx(classes.menuButton, open && classes.hide)}
                     >
+                        <AccountCircleRoundedIcon />
                     </IconButton>
                 </Toolbar>
             </AppBar>
@@ -176,7 +211,7 @@ export default function MyAppBar(props) {
                         ))}
                 </List>*/}
                 <List>
-                    {[{ name: 'Home', icon: <HomeRoundedIcon />, to:"/" }, { name: 'Contact Us', icon: <InfoRounded />, to:"contact-us" }, { name: 'FAQs', icon: <HelpOutlineRoundedIcon />, to:"faqs" }].map((text, index) => (
+                    {[{ name: 'Home', icon: <HomeRoundedIcon />, to: "/" }, { name: 'Contact Us', icon: <InfoRounded />, to: "contact-us" }, { name: 'FAQs', icon: <HelpOutlineRoundedIcon />, to: "faqs" }].map((text, index) => (
                         <Link to={text.to}>
                             <ListItem button key={text.name}>
                                 <ListItemIcon>{text.icon}</ListItemIcon>
