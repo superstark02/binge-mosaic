@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Home from './Pages/Home';
+import { theme } from './Theme/Theme';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+const screenStyle = {
+  backgroundColor: theme.palette.primary.dark,
+  color: theme.palette.primary.light,
+  minHeight: '100vh'
+};
+
+document.getElementById("root").style.height = "100vh";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={screenStyle} >
+      <Router >
+        <Switch>
+          <Route exact path='/' component={Home} />
+        </Switch>
+      </Router>
     </div>
   );
 }

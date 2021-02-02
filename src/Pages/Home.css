@@ -1,0 +1,125 @@
+.image{
+    background-image: url(../Images/webcover.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 70vh;
+    width: 100%;
+}
+
+.overlay{
+    height: 70vh;
+    background-image: linear-gradient(to right, #282828 , transparent);
+    padding: 100px 0px;
+}
+
+.cover-para{
+    width: 50%;
+    font-size: 18px;
+}
+
+.width-change{
+    width: 70%;
+    margin: 50px 0px;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.h1{
+    font-size: 50px;
+    margin: 20px 0px;
+}
+
+.typical{
+    font-size: 60px;
+}
+
+.a-image{
+    filter: drop-shadow(0px 10px 30px black);
+}
+
+.img-container{
+    width: 100%;
+    padding: 20px;
+}
+
+.flex-wrap{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1024px) {
+    .width-change{
+        width: 90%;
+        text-align: center;
+    }
+    .cover-para{
+        width: 100%;
+        font-size: 15px;
+    }
+    .typical{
+        font-size: 30px;
+        text-align: center;
+        width: 100%;
+        justify-content: center;
+    }
+    .flex-wrap{
+        flex-wrap: wrap;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 10px;
+  }
+  
+  ul li:before {
+    content: '✓';
+    padding: 10px;
+  }
+
+.plans-table{
+    width: 100%;
+    margin: 40px 0px;
+    table-layout: fixed;
+    text-align: center;
+    border: none;
+    background-color: white;
+    font-size: 16px;
+}
+
+.td{
+    background-color: white;
+    color: black;
+    padding: 20px 0px;
+    border: none;
+    margin: 0px;
+}
+
+.style-td{
+    background-color: white;
+    color: black;
+    padding: 20px 0px;
+    border: none;
+    margin: 0px;
+    margin: 5px;
+    background-color: #F3F3F3;
+}
+
+.dark-row{
+    background-color: #3B3A3F;
+    color: white;
+    padding: 20px 0px;
+}
+
+.button-ctc{
+    background-color: white;
+    color: #282828;
+    padding: 10px;
+    margin: 10px 20px;
+    border-bottom: solid 5px white;
+    width: 100%;
+}
+
+.button-ctc:hover{
+    border-bottom: solid 5px grey;
+}
