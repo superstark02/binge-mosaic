@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "bingemosaic",
     "public": "build",
     "ignore": [
       "firebase.json",

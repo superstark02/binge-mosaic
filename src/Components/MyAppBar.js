@@ -5,10 +5,9 @@ import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Slide from '@material-ui/core/Slide';
-import { makeStyles,withStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -25,9 +24,55 @@ import { Link } from 'react-router-dom';
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import HelpOutlineRoundedIcon from '@material-ui/icons/HelpOutlineRounded';
 import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
-import TextField from '@material-ui/core/TextField';
 
 const drawerWidth = 200;
+
+const apps = [
+    {
+        name: "VOOT",
+        image: "https://firebasestorage.googleapis.com/v0/b/project-ott-d883c.appspot.com/o/AppData%2Fvoot.png?alt=media&token=3a85088f-817d-4053-96fb-4d1373ada778"
+    },
+    {
+        name: "ZEE 5",
+        image: "https://firebasestorage.googleapis.com/v0/b/project-ott-d883c.appspot.com/o/AppData%2Fzee5.png?alt=media&token=1d42762f-4b58-4da3-9418-72fa6383a83d"
+    },
+    {
+        name: "ALT BALAJI",
+        image: "https://etimg.etb2bimg.com/photo/68918163.cms"
+    },
+    {
+        name: "YUPP TV",
+        image: "https://play-lh.googleusercontent.com/mNX-Fl-1cgwBzuF8m8YFcaF7GGNUQAl5gLtH7eJNrYSZHYnw1GIVgTXSQT5K7OEM_1aE"
+    }
+]
+
+
+const menu = [
+    {
+        name: "Hollywood",
+        link: "/hollywood"
+    },
+    {
+        name: "Bollywood",
+        link: "/bollywood"
+    },
+    {
+        name: "TV",
+        link: "/tv"
+    },
+    {
+        name: "Movies",
+        link: "/movies"
+    },
+    {
+        name: "Anime",
+        link: "/anime"
+    },
+    {
+        name: "MOSAIC",
+        link: "/mosaic-app-demo"
+    },
+]
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -120,9 +165,8 @@ export default function MyAppBar(props) {
 
     return (
         <React.Fragment>
-            <CssBaseline />
             <AppBar
-                elevation={0}
+                elevation={3}
                 position="fixed"
                 className={clsx(classes.appBar, {
                     [classes.appBarShift]: open,
@@ -139,36 +183,44 @@ export default function MyAppBar(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap style={{ display: "flex", justifyContent: "space-between", width: "100%" }} >
+                    <Typography variant="h6" style={{ display: "flex", justifyContent: "space-between", width: "100%" }} >
                         <div style={{ display: "flex" }} >
                             <div style={{ fontFamily: "mosaic", margin: "0px 20px" }} className="wrap" >
                                 MOSAIC
                             </div>
-                            <div className="wrap" style={{ margin: "0px 20px", fontSize: "16px" }} >
-                                <div className="menu" >
-                                    Apps
+                            <div className="wrap" style={{ margin: "0px 20px", fontSize: "16px", zIndex: "0" }} >
+                                <div className="dropdown" >
+                                    <div className="menu" >
+                                        Apps
+                                    </div>
+                                    <div class="dropdown-content">
+                                        {
+                                            apps.map(item => {
+                                                return (
+                                                    <div className="wrap app-list" style={{ justifyContent: "left" }} >
+                                                        <div>
+                                                            <img className="app-icon" src={item.image} />
+                                                        </div>
+                                                        <div className="app-name" >
+                                                            {item.name}
+                                                        </div>
+                                                    </div>
+                                                )
+                                            })
+                                        }
+                                    </div>
                                 </div>
-                                <div className="menu">
-                                    Hollywood
-                                </div>
-                                <div className="menu">
-                                    Bollywood
-                                </div>
-                                <div className="menu">
-                                    TV
-                                </div>
-                                <div className="menu">
-                                    Movies
-                                </div>
-                                <div className="menu">
-                                    Sports
-                                </div>
-                                <div className="menu">
-                                    News
-                                </div>
-                                <div className="menu">
-                                    Anime
-                                </div>
+                                {
+                                    menu.map(item => {
+                                        return (
+                                            <Link to={item.link} >
+                                                <div className="menu">
+                                                    {item.name}
+                                                </div>
+                                            </Link>
+                                        )
+                                    })
+                                }
                             </div>
                         </div>
                         <div style={{ marginRight: "5vw" }}>
