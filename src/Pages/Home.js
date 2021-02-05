@@ -8,27 +8,43 @@ import Loader from 'react-loader-spinner'
 import "./Home.css"
 import { theme } from '../Theme/Theme'
 import MyList from '../Components/MyList'
+import { uploadApps, uploadData } from '../Database/uploadData'
 
 export class Home extends Component {
 
     state = {
         data: null,
+        drama: null,
+        action:null
     }
 
     componentDidMount() {
         getByWord("Index", "Comedy").then(snap => {
             this.setState({ data: snap })
         })
+
+        getByWord("Index", "Drama").then(snap => {
+            this.setState({ drama: snap })
+        })
+
+        getByWord("Index", "Action").then(snap => {
+            this.setState({ action: snap })
+        })
+
+        //uploadData();
+        //uploadApps();
     }
 
     render() {
-        if (this.state.data) {
+        if (this.state.data && this.state.drama && this.state.action) {
             return (
                 <div>
                     <MyAppBar />
                     <MyCarousel />
                     <div style={{marginTop:"100px"}} >
-                        <MyList title="Best In Comedy" filter='Comedy' data={this.state.data} />
+                        <MyList title="Best In Comedy" filter='Movie' data={this.state.data} />
+                        <MyList title="Drama" filter='Movie' data={this.state.drama} />
+                        <MyList title="Amazing Action" filter='Movie' data={this.state.action} />
                     </div>
                     <Footer />
                 </div>

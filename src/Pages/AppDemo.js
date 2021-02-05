@@ -7,8 +7,8 @@ export class AppDemo extends Component {
         return (
             <div>
                 <MyAppBar/>
-                <div className="wrap" style={{height:"90vh"}} >
-                    <iframe src="https://project-ott-d883c.web.app/" height="90%" width="20%" >
+                <div className="wrap" style={{height:"100vh",marginTop:"-50px"}} >
+                    <iframe src="https://project-ott-d883c.web.app/" height="85%" width="25%" >
 
                     </iframe>
                 </div>

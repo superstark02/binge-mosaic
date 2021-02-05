@@ -43,6 +43,22 @@ const apps = [
     {
         name: "YUPP TV",
         image: "https://play-lh.googleusercontent.com/mNX-Fl-1cgwBzuF8m8YFcaF7GGNUQAl5gLtH7eJNrYSZHYnw1GIVgTXSQT5K7OEM_1aE"
+    },
+    {
+        name: "ARRE",
+        image: "https://play-lh.googleusercontent.com/iMIuUGAXsv9t48WrZ3GKJDvVv0qBhn9k8gizHeXZjlJ0I6AXjYGJyX5KzSfIq2i6PMg"
+    },
+    {
+        name: "SUN NXT",
+        image: "https://play-lh.googleusercontent.com/jFi2iC10wQJ42gu-DO2CMeIcN3qcmNQHtY5EBT_wtp4jCIozS4n3Q9pA7ZloDUGHHw"
+    },
+    {
+        name: "HOICHOI",
+        image: "https://play-lh.googleusercontent.com/dxc6rqZHigOTItU0u3i4aWOKN9pdszX-JlZK1tRatCOyT3JJD1AOW7TZ-hzKyk1tkxI"
+    },
+    {
+        name: "AHA",
+        image: "https://upload.wikimedia.org/wikipedia/en/f/fb/Aha_OTT_Logo.jpeg"
     }
 ]
 
@@ -197,14 +213,16 @@ export default function MyAppBar(props) {
                                         {
                                             apps.map(item => {
                                                 return (
-                                                    <div className="wrap app-list" style={{ justifyContent: "left" }} >
-                                                        <div>
-                                                            <img className="app-icon" src={item.image} />
+                                                    <a style={{color:"inherit"}} href={"/app/"+item.name} >
+                                                        <div className="wrap app-list" style={{ justifyContent: "left" }} >
+                                                            <div>
+                                                                <img className="app-icon" src={item.image} />
+                                                            </div>
+                                                            <div className="app-name" >
+                                                                {item.name}
+                                                            </div>
                                                         </div>
-                                                        <div className="app-name" >
-                                                            {item.name}
-                                                        </div>
-                                                    </div>
+                                                    </a>
                                                 )
                                             })
                                         }
