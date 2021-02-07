@@ -197,6 +197,21 @@ export function uploadApps(){
     
 }
 
+export function temp(){
+    db.collection("Index").get().then(snap=>{
+        snap.forEach(doc=>{
+            var array = []; array = doc.data().keywords;
+
+            if(doc.data().app === "https://firebasestorage.googleapis.com/v0/b/project-ott-d883c.appspot.com/o/AppData%2Fzee5.png?alt=media&token=1d42762f-4b58-4da3-9418-72fa6383a83d"){
+                array.push("ZEE5")
+                db.collection("Index").doc(doc.id).update({keywords:array}).then(suc=>{
+                    console.log("Done")
+                })
+            }
+        })
+    })
+}
+
 
 
 

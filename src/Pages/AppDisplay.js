@@ -4,17 +4,23 @@ import getDoc from "../Database/getDoc"
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import Loader from 'react-loader-spinner'
 import { theme } from '../Theme/Theme'
+import MyList from '../Components/MyList'
+import getCollectionQuery, { getByWord } from '../Database/getCollectionQuery'
 
 export class AppDisplay extends Component {
     state = {
-        data: null
+        data: null,
+        comedy: null
     }
 
     componentDidMount() {
         getDoc("Apps", this.props.match.params.id).then(snap => {
             this.setState({ data: snap })
-            console.log(this.props.match.params.id)
-            console.log(snap)
+        })
+
+        getByWord("Index", this.props.match.params.id).then(s => {
+            this.setState({ comedy: s })
+            console.log(s)
         })
     }
 
@@ -47,9 +53,17 @@ export class AppDisplay extends Component {
                             </div>
                         </div>
                     </div>
+                    {
+                        this.state.comedy ? (
+                            <MyList title="Comedy" data={this.state.comedy} filter={[this.props.match.params, "MOVIE"]} />
+
+                        ) : (
+                                <div></div>
+                            )
+                    }
                 </div>
             )
-        }else{
+        } else {
             return (
                 <div className="wrap" style={{ position: "absolute", top: "0", width: "100%", minHeight: "100vh" }}  >
                     <Loader

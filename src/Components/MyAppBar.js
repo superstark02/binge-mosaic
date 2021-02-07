@@ -59,6 +59,14 @@ const apps = [
     {
         name: "AHA",
         image: "https://upload.wikimedia.org/wikipedia/en/f/fb/Aha_OTT_Logo.jpeg"
+    },
+    {
+        name: "SHEMAROO ME",
+        image: "https://firebasestorage.googleapis.com/v0/b/project-ott-d883c.appspot.com/o/AppData%2Fshemaroome.png?alt=media&token=42bd4824-ec0a-4d89-bf38-3d7e99dd7a91"
+    },
+    {
+        name: "VIU",
+        image: "https://firebasestorage.googleapis.com/v0/b/project-ott-d883c.appspot.com/o/AppData%2Fviu.png?alt=media&token=a14d7508-48f4-46bb-8ce2-ce4baebe2c15"
     }
 ]
 
@@ -281,7 +289,7 @@ export default function MyAppBar(props) {
                         ))}
                 </List>*/}
                 <List>
-                    {[{ name: 'Home', icon: <HomeRoundedIcon />, to: "/" }, { name: 'Contact Us', icon: <InfoRounded />, to: "contact-us" }, { name: 'FAQs', icon: <HelpOutlineRoundedIcon />, to: "faqs" }].map((text, index) => (
+                    {[{ name: 'Home', icon: <HomeRoundedIcon />, to: "/" }, { name: 'Contact Us', icon: <InfoRounded />, to: "contact-us" }, { name: 'About', icon: <HelpOutlineRoundedIcon />, to: "about" }].map((text, index) => (
                         <Link to={text.to}>
                             <ListItem button key={text.name}>
                                 <ListItemIcon>{text.icon}</ListItemIcon>
