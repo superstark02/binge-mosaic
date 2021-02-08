@@ -5,7 +5,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import Loader from 'react-loader-spinner'
 import { theme } from '../Theme/Theme'
 import MyList from '../Components/MyList'
-import getCollectionQuery, { getByWord } from '../Database/getCollectionQuery'
+import { getByWord } from '../Database/getCollectionQuery'
 
 export class AppDisplay extends Component {
     state = {
