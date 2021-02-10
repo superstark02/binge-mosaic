@@ -8,7 +8,7 @@ import Loader from 'react-loader-spinner'
 import "./Home.css"
 import { theme } from '../Theme/Theme'
 import MyList from '../Components/MyList'
-//import { uploadApps, uploadData, temp } from '../Database/uploadData'
+import { uploadData } from '../Database/uploadData'
 
 export class Home extends Component {
 

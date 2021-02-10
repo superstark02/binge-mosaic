@@ -1,61 +1,29 @@
 import React from 'react'
-import thejudge from '../Images/Cover/tj.jpg'
-import sg2 from '../Images/Cover/sg2.jpg';
-import ww from '../Images/Cover/ww84.jpg'
-import u from '../Images/Cover/6u.jpg'
 import "../CSS/Components/Carousel.scss"
 
-const images = [
-    {
-        image: ww,
-        link: "/display/wonderwoman1984"
-    },
-    {
-        image: sg2,
-        link: "/display/sacredgames"
-    },
-    {
-        image: thejudge,
-        link: "/display/thejudge"
-    },
-    {
-        image: u,
-        link: "/display/6underground"
-    },
-]
 
 const slides = [
     {
-        title: "Wonder Woman 1984",
-        subtitle: "Prime Video",
-        description: "Adventure is never far away",
-        image: ww,
+        title: "Kaagaz",
+        subtitle: "Zee 5",
+        description: "A true success story of a dead man",
+        image: "https://static.abplive.com/wp-content/uploads/sites/2/2021/01/07142145/kaagaz.jpg",
     },
     {
-        title: "Chamonix",
-        subtitle: "France",
-        description: "Let your dreams come true",
-        image: sg2,
+        title: "Khaali Peeli",
+        subtitle: "zee 5",
+        image: "https://assets.thehansindia.com/h-upload/2020/10/02/1002913-khaali-peeli-movie-review.webp",
     },
     {
-        title: "The Judge",
-        subtitle: "Netflix",
-        description: "A piece of heaven",
-        image: thejudge,
+        title: "Pad Man",
+        subtitle: "zee 5",
+        image: "https://m.hindustantimes.com/rf/image_size_960x540/HT/p2/2017/11/27/Pictures/_919e3394-d34b-11e7-a032-ea4e291afd66.jpg",
     },
     {
-        title: "Four",
-        subtitle: "Australia",
-        description: "A piece of heaven",
-        image:
-            "https://images.unsplash.com/flagged/photo-1564918031455-72f4e35ba7a6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-    },
-    {
-        title: "Five",
-        subtitle: "Australia",
-        description: "A piece of heaven",
-        image:
-            "https://images.unsplash.com/photo-1579130781921-76e18892b57b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
+        title: "KGF Chapter 1",
+        subtitle: "Voot",
+        description: "Rebuilding an empire",
+        image:"https://www.thenewsminute.com/sites/default/files/styles/news_detail/public/KGF-chapter2.jpg?itok=wpYqmIzZ   "
     }
 ];
 

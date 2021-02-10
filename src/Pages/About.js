@@ -15,6 +15,24 @@ export class About extends Component {
                         <h1>
                             About Us
                         </h1>
+
+                        <h2>
+                            Problem
+                        </h2>
+                        <div>
+                            I want to buy Voot subscription but:
+                            <ol>
+                                <li>I don't have credit card</li>
+                                <li>I hesitate and don’t know if I will like it</li>
+                                <li>I like only one series on this platform. So why should I buy a whole month plan</li>
+                                <li>I already have some other OTTs subscription</li>
+                                <li>I have no idea what Voot is</li>
+                            </ol>
+                        </div>
+
+                        <h2>
+                            
+                        </h2>
                     </div>
                 </div>
                 <Footer/>
